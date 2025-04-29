@@ -42,6 +42,9 @@ class _HomeState extends State<Home> {
             ),
             Text('Body text start',style: TextStyle( fontSize: 25,),),
             Text('Body text start',style: TextStyle( fontSize: 25,),),
+            SizedBox(
+              width: 20,
+            ),
             Text('Body text End',style: TextStyle( fontSize: 25,),),
           ],
         ),
