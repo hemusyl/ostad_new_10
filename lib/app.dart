@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'os10_button.dart';
+import 'float_actn_bt.dart';
 import 'form_login.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,8 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'batch 10 flutter',
-      home: Os10Button(),
+      title: 'floating action button',
+      home: floatingAction(), // Class name
     );
   }
 }
