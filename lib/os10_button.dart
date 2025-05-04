@@ -26,7 +26,10 @@ class Os10Button extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
                   foregroundColor: Colors.white,
-                  textStyle: TextStyle(fontSize: 20.0),
+                  textStyle: TextStyle
+                    (fontSize: 22.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 onPressed:(){print('Button');},
                 child: Text('Button Two')),
@@ -39,4 +42,5 @@ class Os10Button extends StatelessWidget {
       ),
     );
   }
+
 }
