@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'floating action button',
-      home: contentPrac(), // Class name
+      home: ContentPrac(), // Class name
     );
   }
 }
