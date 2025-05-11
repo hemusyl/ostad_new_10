@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 class ContentPrac extends StatelessWidget {
   //const ContentPrac({super.key});
   final animation = AlwaysStoppedAnimation(0.65); // For animated text example
+  MySnackbar(message,context){
+   return ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message)));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +17,11 @@ class ContentPrac extends StatelessWidget {
         title:Text('Class Action Button '),
         centerTitle: true,
         backgroundColor: Colors.tealAccent,
+        toolbarHeight: 65,
+        actions: [
+          IconButton(onPressed: (){MySnackbar('I am Email', context);}, icon:Icon(Icons.email)),
+          IconButton(onPressed: (){MySnackbar('I am Search', context);}, icon:Icon(Icons.search)),
+        ],
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(15),
@@ -108,7 +117,42 @@ class ContentPrac extends StatelessWidget {
               //style: Theme.of(context).textTheme.headline6,
             ),
             Divider(height: 30),
+            SizedBox(
+              height: 10,
+            ),
+            Column(
+              children: [
+                TextField(
+                keyboardType: TextInputType.phone,
+                  //obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Enter your name',
+                    hintText: 'John Doe',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.person),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Column(
+              children: [
+                TextField(
+                keyboardType: TextInputType.phone,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    hintText: 'Enter your password',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.password),
+                  ),
+                ),
+              ],
+            ),
 
+            Divider(height: 30),
             // Selectable Text
             Text('7. Selectable Text'),
             SizedBox(height: 10),
@@ -117,6 +161,7 @@ class ContentPrac extends StatelessWidget {
               style: TextStyle(fontSize: 18),
             ),
             Divider(height: 30),
+
 
             // Gradient Text
             Text('8. Gradient Text'),
@@ -149,7 +194,16 @@ class ContentPrac extends StatelessWidget {
               child: Text('Animated Text Example'),
             ),
           ],
+
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.amber,
+        elevation: 10.0,
+        onPressed: (){
+          MySnackbar('I am floating action', context);
+      },
+      child: Icon(Icons.add),
       ),
     );
   }

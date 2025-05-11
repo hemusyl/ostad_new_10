@@ -3,6 +3,8 @@ import 'os10_button.dart';
 import 'float_actn_bt.dart';
 import 'form_login.dart';
 import 'content_prac.dart';
+import 'bottomNavigationButton.dart';
+import 'navigation_drawer.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'floating action button',
-      home: ContentPrac(), // Class name
+      home: navigationDrawer(), // Class name
     );
   }
 }
