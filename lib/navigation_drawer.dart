@@ -48,7 +48,8 @@ class navigationDrawer extends StatelessWidget {
                   child: UserAccountsDrawerHeader(
                       accountName: Text("Humayun Kabir"),
                       accountEmail: Text("humayun1278@gmail.com"),
-                      currentAccountPicture: Image.network("https://images.app.goo.gl/8GbsxQHijcBZ5VTv5"),
+                      currentAccountPicture:
+                      Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrN3fMD9X1_p5b6lRSCGcpDtH9BcgEOsEZLg&s"),
                   ),
                       decoration: BoxDecoration(color: Colors.cyanAccent),
               ),
