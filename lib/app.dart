@@ -5,6 +5,7 @@ import 'form_login.dart';
 import 'content_prac.dart';
 import 'bottomNavigationButton.dart';
 import 'navigation_drawer.dart';
+import 'buttonType.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'floating action button',
-      home: navigationDrawer(), // Class name
+      title: ' Button Type',
+      home: buttonType(), // Class name
     );
   }
 }

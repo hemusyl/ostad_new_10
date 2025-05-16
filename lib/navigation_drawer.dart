@@ -45,13 +45,15 @@ class navigationDrawer extends StatelessWidget {
             children: [
               DrawerHeader(
                 padding: EdgeInsets.all(0),
-                  child: UserAccountsDrawerHeader(
-                      accountName: Text("Humayun Kabir"),
-                      accountEmail: Text("humayun1278@gmail.com"),
-                      currentAccountPicture:
-                      Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrN3fMD9X1_p5b6lRSCGcpDtH9BcgEOsEZLg&s"),
-                  ),
-                      decoration: BoxDecoration(color: Colors.cyanAccent),
+                child: UserAccountsDrawerHeader(
+                  accountName: Text("Humayun Kabir"),
+                  accountEmail: Text("humayun1278@gmail.com"),
+                  currentAccountPicture:
+                  Image.network("https://smartcards.pro/NlVgNj"),
+                ),
+                decoration: BoxDecoration(
+                    color: Colors.cyanAccent,
+                ),
               ),
               ListTile(
                 leading: Icon(Icons.home),
@@ -69,19 +71,6 @@ class navigationDrawer extends StatelessWidget {
                 title: Text("Phone"),),
             ],
         ),
-      ),
-      endDrawer: Drawer(
-        child: ListView.builder(
-            itemBuilder: (
-                BuildContext context,int index){
-              return ListTile(
-                leading:Icon(Icons.list),
-                title: Text("GFG item $index"),
-                trailing: Icon(Icons.done),
-              );
-            }),
-        //elevation: 20.0,
-        //semanticLabel: 'endDrawer',
       ),
     );
   }
