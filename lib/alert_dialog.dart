@@ -106,7 +106,6 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
       },
     );
   }
-
   void _showCustomizedAlert(BuildContext context) {
     showDialog(
       context: context,
