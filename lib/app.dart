@@ -6,6 +6,7 @@ import 'content_prac.dart';
 import 'bottomNavigationButton.dart';
 import 'navigation_drawer.dart';
 import 'buttonType.dart';
+import 'alert_dialog.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: ' Button Type',
-      home: buttonType(), // Class name
+      home: navigationDrawer(), // Class name
     );
   }
 }

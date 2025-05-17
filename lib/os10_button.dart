@@ -15,11 +15,11 @@ class Os10Button extends StatelessWidget {
       ),
       body:Center(
      child:Column(
-        children: [
+        children: <Widget>[
+          ElevatedButton(
+              onPressed:(){print('Button');}, child: Text('Button Two A')),
           ElevatedButton(
               onPressed:(){print('Button');}, child: Text('Button')),
-          ElevatedButton(
-              onPressed:(){print('Button');}, child: Text('Button Two')),
           SizedBox(
             width: 250,
             height: 60,

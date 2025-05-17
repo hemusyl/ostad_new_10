@@ -44,15 +44,29 @@ class navigationDrawer extends StatelessWidget {
         child: ListView(
             children: [
               DrawerHeader(
-                padding: EdgeInsets.all(0),
-                child: UserAccountsDrawerHeader(
-                  accountName: Text("Humayun Kabir"),
-                  accountEmail: Text("humayun1278@gmail.com"),
-                  currentAccountPicture:
-                  Image.network("https://smartcards.pro/NlVgNj"),
-                ),
                 decoration: BoxDecoration(
-                    color: Colors.cyanAccent,
+                  color: Colors.blue,
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundImage: NetworkImage("https://smartcards.pro/NlVgNj"),
+                      ),
+                      SizedBox(height: 2),
+                      Text(
+                        'humayun1278@gmail.com',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                      SizedBox(height: 2),
+                      Text(
+                        '+8801716205879',
+                        style: TextStyle(color: Colors.white70, fontSize: 14),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               ListTile(
@@ -66,6 +80,10 @@ class navigationDrawer extends StatelessWidget {
               ListTile(
                 leading: Icon(Icons.contact_mail),
                   title: Text("Contact"),),
+              Divider(
+                thickness: 1,
+                color: Colors.blue.shade200,
+              ),
               ListTile(
                 leading: Icon(Icons.phone),
                 title: Text("Phone"),),
