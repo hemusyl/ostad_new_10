@@ -7,6 +7,9 @@ import 'bottomNavigationButton.dart';
 import 'navigation_drawer.dart';
 import 'buttonType.dart';
 import 'alert_dialog.dart';
+import 'mediaQueryhk.dart';
+import 'mediaQueryostad.dart';
+import 'mediaQuerymultiple.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: ' Button Type',
-      home: navigationDrawer(), // Class name
+      home: ModuleMedia(), // Class name
     );
   }
 }
