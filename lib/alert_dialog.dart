@@ -45,11 +45,24 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
             ElevatedButton(
               onPressed: () => _showCustomizedAlert(context),
               child: const Text('Customized Alert'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.all(15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                textStyle: TextStyle
+                  (fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 50,),
             ElevatedButton(
               onPressed: () => _showInputAlert(context),
               child: const Text('Alert with Input'),
+
             ),
           ],
         ),
@@ -155,7 +168,7 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
           title: const Text('Enter your name'),
           content: TextField(
             controller: _nameController,
-            decoration: const InputDecoration(hintText: "Name"),
+            decoration: const InputDecoration(hintText: "Add Name"),
           ),
           actions: <Widget>[
             TextButton(
