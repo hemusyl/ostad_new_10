@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                           SizedBox(
                             height: 10,
                           ),
-                          Padding(padding: EdgeInsets.all(10),
+                          Padding(padding: EdgeInsets.only(left: 10,right: 10,top: 10,bottom: 10),
                             child: TextFormField(
                               controller: phoneController,
                               decoration: InputDecoration(
