@@ -35,26 +35,33 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text('Phone Number'),
-                          TextFormField(
-                            controller: phoneController,
-                            decoration: InputDecoration(
-                              hintText: 'Phone Number',
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(50),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Padding(padding: EdgeInsets.all(10),
+                            child: TextFormField(
+                              controller: phoneController,
+                              decoration: InputDecoration(
+                                hintText: 'Phone Number',
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
                               ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter your phone number';
+                                } else {
+                                  return null;
+                                }
+                              },
                             ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please enter your phone number';
-                              } else {
-                                return null;
-                              }
-                            },
+
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 5,
                           ),
-                          TextFormField(
+                          Padding(padding:EdgeInsets.all(10),
+                          child:TextFormField(
                             controller: passwordController,
                             decoration: InputDecoration(
                               hintText: 'Password',
@@ -72,8 +79,9 @@ class _LoginPageState extends State<LoginPage> {
                               }
                             },
                           ),
+                          ),
                           SizedBox(
-                            height: 20,
+                            height: 5,
                           ),
                           SizedBox(
                               width: 300,
@@ -84,7 +92,8 @@ class _LoginPageState extends State<LoginPage> {
                                         SnackBar(content: Text('Login Successful')),
                                       );
                                     }
-                                  }, child: Text('Login'))),
+                                  },
+                                  child: Text('Login'))),
                         ]))
               ],
             )),
