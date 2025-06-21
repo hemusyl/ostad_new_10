@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: ' Button Type',
-      home: LoginPage(), // Class name
+      home: ContactListScreen(), // Class name
     );
   }
 }
