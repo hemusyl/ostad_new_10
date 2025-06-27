@@ -12,6 +12,8 @@ class Module13hk extends StatefulWidget {
 class _Module13hkState extends State<Module13hk> {
   final Productcontroller productcontroller = Productcontroller();
 
+  get value => null;
+
   @override
   void initState(){
     super.initState();
@@ -72,9 +74,27 @@ class _Module13hkState extends State<Module13hk> {
         childAspectRatio: 0.6,
       ),
           itemBuilder: (context, index){
+        var product = productcontroller.products[index];
               return productCard(onEdit: (){
                 productDialog();
-              }, onDelete: (){}, product: productcontroller.products[index],);
+              }, onDelete: (){
+                productcontroller.DeleteProducts(product.sId.toString()).then((value));
+                if(value){
+                  setState(() async {
+                   await productcontroller.fetchProducts();
+
+                  });
+                  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text('Product Deleted'),
+    duration: Duration(seconds: 2),)
+    );
+    } else{
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Something Wrong'),
+                      duration: Duration(seconds: 2),)
+                  );
+                }
+              }, product: product,);
           }),
       floatingActionButton: FloatingActionButton(onPressed: ()=> productDialog(),
       child: Icon(Icons.add),
