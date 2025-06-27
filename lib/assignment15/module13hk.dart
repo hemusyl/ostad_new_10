@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ostad_new_10/assignment15/ProductController.dart';
+import 'package:ostad_new_10/assignment15/widget/productcard.dart';
 
 class Module13hk extends StatefulWidget {
   const Module13hk({super.key});
@@ -8,7 +10,16 @@ class Module13hk extends StatefulWidget {
 }
 
 class _Module13hkState extends State<Module13hk> {
+  final Productcontroller productcontroller = Productcontroller();
+
   @override
+  void initState(){
+    super.initState();
+    setState(() {
+      productcontroller.fetchProducts();
+    });
+  }
+
   Widget build(BuildContext context) {
 
     void productDialog(){
@@ -31,6 +42,17 @@ class _Module13hkState extends State<Module13hk> {
               TextField(),
               TextField(),
               TextField(),
+              SizedBox( height: 10,),
+              Row(
+                children: [
+                  TextButton(onPressed: (){
+                    Navigator.pop(context);
+                  }, child: Text('Close')),
+                SizedBox(width:5),
+                  ElevatedButton(onPressed: (){}, child: Text('Add Product')),
+
+                ],
+              ),
             ],
           ),
         ),
@@ -44,9 +66,21 @@ class _Module13hkState extends State<Module13hk> {
         backgroundColor: Colors.orangeAccent,
         centerTitle: true,
       ),
+      body: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 10,
+        childAspectRatio: 0.6,
+      ),
+          itemBuilder: (context, index){
+              return productCard(onEdit: (){
+                productDialog();
+              }, onDelete: (){}, product: productcontroller.products[index],);
+          }),
       floatingActionButton: FloatingActionButton(onPressed: ()=> productDialog(),
       child: Icon(Icons.add),
       ),
     );
   }
 }
+
+
